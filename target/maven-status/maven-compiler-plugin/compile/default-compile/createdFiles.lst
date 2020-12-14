@@ -1,0 +1,16 @@
+connect_jdbc\TableProducts.class
+models\Admin.class
+controller\demo.class
+utils\Utils.class
+models\User.class
+enums\Tables.class
+controller\LoginUser.class
+enums\Charges.class
+connect_jdbc\TableUsers.class
+controller\RegistreUser.class
+connect_jdbc\Mysql.class
+controller\ListProducts.class
+controller\ProductWithComments.class
+interfaces\Admin.class
+enums\RolUser.class
+controller\LogOut.class
