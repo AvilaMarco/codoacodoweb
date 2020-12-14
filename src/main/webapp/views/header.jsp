@@ -10,7 +10,7 @@
 %>
 <%-- routes --%>
 <%
-    String url = request.getRequestURL().toString().split("web_cac")[1];
+    String url = request.getRequestURL().toString().split("codoacodowebapp.herokuapp.com")[1];
     List<String> routes = Arrays.asList("index", "admin");
     List<String> routesForm = Arrays.asList("login", "sing in");
     String itemRoute = "<li class='nav-item %s'><a class='nav-link' href='%s'>%s</a></li>";
