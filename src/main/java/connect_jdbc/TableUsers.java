@@ -39,7 +39,6 @@ public class TableUsers {
     }
     
     public User getUserLogin(String email, String password) throws SQLException{
-        Map<String, Object> result = new LinkedHashMap<>();
         PreparedStatement query = mysql.prepareStatement(login);
         query.setString(1, email);
         query.setString(2, password);

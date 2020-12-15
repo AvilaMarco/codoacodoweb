@@ -19,12 +19,6 @@
 %>
 <!DOCTYPE html>
 <header>
-    <%
-        for (String i : urls) {
-            out.println("-- "+ i+" --");
-        }
-        out.println("-- "+ url+" --");
-    %>
     <nav class="navbar navbar-expand-md navbar-dark bg-primary rounded-0" style="z-index: 10;">
         <a class="navbar-brand" href="#">Navbar</a>
         <button
@@ -37,29 +31,29 @@
         </button>
         <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto">
-                <%--<%=  Utils.htmlRoutes(routes, url, itemRoute, "active")%>--%>
+                <%=  Utils.htmlRoutes(routes, url, itemRoute, "active")%>
             </ul>
-            <!--            <div class="navbar-bnts w-25 flex-column flex-md-row">
-            <%
-                if (usuario != null) {
-            %>
-            <div class="dropdown">
-                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-                    User Data
-                </button>
-                <div class="dropdown-menu text-center">
-                    <p class="m-0 border-bottom"><%= usuario.getFullName()%></p>
-                    <p class="m-0 border-bottom"><%= usuario.getEmail()%></p>
-                    <p class="m-0"><%= usuario.getRol()%></p>
-                </div>
+            <div class="navbar-bnts w-25 flex-column flex-md-row">
+                <%
+                    if (usuario != null) {
+                %>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        User Data
+                    </button>
+                    <div class="dropdown-menu text-center">
+                        <p class="m-0 border-bottom"><%= usuario.getFullName()%></p>
+                        <p class="m-0 border-bottom"><%= usuario.getEmail()%></p>
+                        <p class="m-0"><%= usuario.getRol()%></p>
+                    </div>
+                </div>s
+                <a href="logout" class="btn btn-secondary btn-block">Logout</a>
+                <%
+                    } else {
+                        out.print(Utils.htmlRoutes(routesForm, url, itemRouteForm, "color"));
+                    }
+                %>
             </div>
-            <a href="logout" class="btn btn-secondary btn-block">Logout</a>
-            <%
-                } else {
-//                        out.print(Utils.htmlRoutes(routesForm, url, itemRouteForm, "color"));
-                }
-            %>
-        </div>-->
         </div>
     </nav>
 </header>

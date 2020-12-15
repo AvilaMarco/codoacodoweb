@@ -33,7 +33,7 @@ select * from comentarios where id_producto = 9;
 select * from usuarios where id_usuario = 2;
 select * from productos where id_producto = 5;
 
-select * from usuarios where email = ? and password = ?;
+select * from usuarios where email = "user1@hotmail.com" and password = "1234";
 
 
 SELECT 

@@ -5,27 +5,20 @@
  */
 package controller;
 
-import com.google.gson.Gson;
-import connect_jdbc.TableUsers;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import models.User;
 
 /**
  *
  * @author marco
  */
-@WebServlet(name = "LoginUser", urlPatterns = {"/login"})
-public class LoginUser extends HttpServlet {
+@WebServlet(name = "ServletPruba", urlPatterns = {"/demoServlet"})
+public class ServletPruba extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,43 +31,19 @@ public class LoginUser extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("application/json;charset=UTF-8");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-
-        Gson gson = new Gson();
-
-        TableUsers consultasUsuarios = new TableUsers();
-
-        Map<String, Object> resultJson = new LinkedHashMap<>();
-
-        User usuario = null;
-
-        try {
-            usuario = consultasUsuarios.getUserLogin(email, password);
-            if (usuario != null) {
-                resultJson = usuario.getUserData();
-            } 
-        } catch (SQLException e) {
-            response.sendError(404, e.toString());
-            //resultJson.put("mensaje", e.toString());
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ServletPruba</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ServletPruba at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        if (usuario == null) {
-            response.sendError(404, "Username does not exist");
-        }
-
-        HttpSession session = request.getSession();
-
-        session.setMaxInactiveInterval(60);
-
-        String json = gson.toJson(resultJson);
-
-        session.setAttribute("User", usuario);
-
-        PrintWriter out = response.getWriter();
-        out.println(json);
-
-        response.sendRedirect("index.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

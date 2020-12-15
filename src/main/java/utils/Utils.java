@@ -3,8 +3,9 @@ package utils;
 import java.util.List;
 
 public class Utils {
-    private final static String home = "/";
-    private final static String index = "/index.jsp";
+    private final static String home = "web_cac";
+    private final static String online = "cacwebapp.herokuapp.com";
+    private final static String index = "index.jsp";
     private final static String html = ".html";
     private final static String jsp = ".jsp";
 
@@ -22,7 +23,7 @@ public class Utils {
         if(page.equals("sing in")){
             page = "signIn";
         }
-        if (pageNow.equals(home) || pageNow.equals(index)){
+        if (pageNow.equals(home) || pageNow.equals(index) || pageNow.equals(online)){
             if (page.equals("index")){
                 result = "#";
             }else{
@@ -41,10 +42,10 @@ public class Utils {
     }
     
     public static boolean activeLink(String pageNow, String page){
-        if(pageNow.equals(home) || pageNow.equals(index)){
+        if(pageNow.equals(home) || pageNow.equals(index) || pageNow.equals(online)){
             return page.equals("index");
         }else{
-            String pageN = pageNow.split("/")[2].replace(".jsp", "");
+            String pageN = pageNow.replace(".jsp", "");
             return page.equals(pageN);
         }
     }
