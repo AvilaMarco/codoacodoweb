@@ -12,6 +12,10 @@ public class Mysql {
     private final String url = "jdbc:mysql://localhost:3306/db_cac";
     private final String user = "root";
     private final String password = "1234";
+    private final String db = "FARHFFX7Tb";
+    private final String urlWeb = "jdbc:mysql://remotemysql.com:3306/" + db;
+    private final String userWeb = "FARHFFX7Tb";
+    private final String passwordWeb = "RBopOWqW37";
 
     public Mysql() {
         try {
@@ -20,7 +24,8 @@ public class Mysql {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection(url, user, password);
+            //connection = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(urlWeb, userWeb, passwordWeb);
         } catch (SQLException e) {
             e.printStackTrace();
         }

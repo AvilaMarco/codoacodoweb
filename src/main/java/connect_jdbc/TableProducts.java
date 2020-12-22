@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.sql.Statement;
+import models.Product;
 
 public class TableProducts {
     private Connection mysql;
@@ -23,11 +24,30 @@ public class TableProducts {
     private final String commentsbyproduct = "SELECT id_usuario, comment, c.quality FROM productos AS p INNER JOIN "
             + "comentarios AS c ON c.id_producto = p.id_producto WHERE p.id_producto = ?;";
     private final String products = "SELECT * FROM " + table;
+    private final String createproduct = "insert into "+ table +" (name, price) value (?, ?)";
+    private final String productByName = "select * from " + table + " where name = ? and price = ?";
 
     public TableProducts() {
         mysql = new Mysql().getConnection();
     }
 
+    public Product createProduct(String name, float price) throws SQLException{
+        PreparedStatement query = mysql.prepareStatement(createproduct);
+        query.setString(1, name);
+        query.setFloat(2, price);
+        Product producto = null;
+        if(query.executeUpdate() == 1){
+            PreparedStatement query1 = mysql.prepareStatement(productByName);
+            query1.setString(1, name);
+            query1.setFloat(2, price);
+            ResultSet data = query1.executeQuery();
+            while(data.next()){
+                producto = new Product(data.getInt(cID), data.getString(cName), data.getFloat(cPrice), data.getFloat(cQuality), data.getString(cDescription));
+            }
+        }
+        return producto;
+    }
+    
     public List<Map<String, Object>> allProducts() throws SQLException {
         List<Map<String, Object>> products = new ArrayList<>();
         Statement query = mysql.createStatement();

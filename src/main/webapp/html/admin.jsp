@@ -36,10 +36,10 @@
                     <h2>Products</h2>
                     <div>
                         <h3>Create Product</h3>
-                        <form action="">
+                        <form action="../crearProducto" method="POST">
                             <input type="text" name="name" placeholder="name product">
-                            <input type="number" name="price" placeholder="price product">
-                            <input type="text" name="description" placeholder="description product">
+                            <input type="number" name="price" placeholder="price product" step="500">
+                            <input type="submit" value="create product">
                         </form>
                     </div>
                 </div>

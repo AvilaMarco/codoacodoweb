@@ -7,7 +7,7 @@ values("name1", "surname1", "user1@hotmail.com", "1234"), ("name2", "surname2", 
 insert into usuarios (name, surname, email, password)
 values ("name4", "surname4", "user4@hotmail.com", "1234"), ("name5", "surname5", "user5@hotmail.com", "1234"), ("name6", "surname6", "user6@hotmail.com", "1234");
 
-insert into productos (name, price) 
+insert into productos (name, price)
 values ("generic RAM ddr4 8gb 3000Mhz", 3200), ("generic CPU 3.7GHz", 7600), ("generic GPU 2gb GDDR5", 3200), ("generic motherboard", 6500), 
 ("generic HDD 1TB", 4200), ("generic SSD 120GB", 2290), ("generic mouse", 500), ("generic keyboard", 1400), ("generic box", 3500), 
 ("generic source", 1200), ("generic monitor", 1500);

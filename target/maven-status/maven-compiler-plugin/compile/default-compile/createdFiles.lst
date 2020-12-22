@@ -5,6 +5,7 @@ utils\Utils.class
 models\User.class
 enums\Tables.class
 controller\LoginUser.class
+controller\CreateProduct.class
 enums\Charges.class
 connect_jdbc\TableUsers.class
 controller\RegistreUser.class
