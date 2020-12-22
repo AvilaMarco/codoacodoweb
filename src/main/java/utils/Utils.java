@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Utils {
     private final static String home = "web_cac";
-    private final static String online = "cacwebapp.herokuapp.com";
+    private final static String online = "cacweb.herokuapp.com";
     private final static String index = "index.jsp";
     private final static String html = ".html";
     private final static String jsp = ".jsp";
