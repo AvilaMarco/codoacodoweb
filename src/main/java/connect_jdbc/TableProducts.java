@@ -12,7 +12,7 @@ import models.Product;
 
 public class TableProducts {
     private Connection mysql;
-    private final Tables table = Tables.PRODUCTOS;
+    private final Tables table = Tables.productos;
     //campos
     private final String cID = "id_producto";
     private final String cName = "name";

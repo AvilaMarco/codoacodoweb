@@ -1,12 +1,15 @@
 connect_jdbc\TableProducts.class
 models\Admin.class
 controller\demo.class
+controller\ServletPruba.class
 utils\Utils.class
 models\User.class
 enums\Tables.class
 controller\LoginUser.class
 controller\CreateProduct.class
 enums\Charges.class
+controller\CleanDemo.class
+models\Product.class
 connect_jdbc\TableUsers.class
 controller\RegistreUser.class
 connect_jdbc\Mysql.class
